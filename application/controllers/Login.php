@@ -24,8 +24,35 @@ class Login extends CI_Controller {
 	}
 	public function index()
 	{
+		if ($this->session->userdata('status') == "login") {
+			redirect(base_url("admin"));
+		}
 		$this->load->view('layouts/header');
 		$this->load->view('v_login');
 		$this->load->view('layouts/footer');
+	}
+	function login_act(){
+		$username = $this->input->post('user_name');
+		$password = $this->input->post('user_password');
+		$where = array(
+			'user_name' => $username, 
+			'user_password' => md5($password), 
+		);
+		$cek = $this->m_login->cek_login("tbl_users",$where)->num_rows();
+		if ($cek > 0) {
+			$data_session = array(
+				'nama' => $username,
+				'status' => 'login'
+			);
+			$this->session->set_userdata($data_session);
+			redirect(base_url('admin'));
+		}else{
+			$this->session->set_flashdata('us-1', 'This is test message');
+			redirect(base_url(""));
+		}
+	}
+	function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url(''));
 	}
 }

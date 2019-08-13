@@ -1,0 +1,11 @@
+.shadow1 {
+	-moz-box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.6);
+	-webkit-box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.6);
+	box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.6);
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+	zoom: 1;
+}
+.bg-blues {
+	background-color: #ebf0ff;
+}
