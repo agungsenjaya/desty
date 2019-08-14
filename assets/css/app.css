@@ -13602,7 +13602,7 @@ textarea.parsley-success:focus {
 .nav-aside {
   flex-direction: column;
   line-height: 1.6;
-  font-size: 13px;
+  font-size: 15px;
   white-space: nowrap;
   margin-bottom: 25px; }
   .nav-aside .nav-label {

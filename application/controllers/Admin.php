@@ -18,4 +18,10 @@ class Admin extends CI_Controller
 		$this->load->view('dashboard');
 		$this->load->view('layouts/footer');
 	}
+	function konsumen(){
+		$this->load->view('layouts/header');
+		$this->load->view('layouts/sidebar');
+		$this->load->view('konsumen');
+		$this->load->view('layouts/footer');
+	}
 }
