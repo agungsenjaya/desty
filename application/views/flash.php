@@ -1,7 +1,7 @@
 <div class="flash-container">
 	<?php if ($this->session->flashdata('pg-1')): ?>
 		<div class="flash-message pg-1 flash-success">
-			Data tidak berhasil ditambahkan, Nomor KTP sudah terdaftar, Terima kasih.
+			Data tidak berhasil ditambahkan, Nomor Telepon sudah terdaftar, Terima kasih.
 		</div>
 		<?php elseif ($this->session->flashdata('pg-2')): ?>
 			<div class="flash-message pg-2 flash-info">

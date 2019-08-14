@@ -9,3 +9,6 @@
 .bg-blues {
 	background-color: #ebf0ff;
 }
+#konsumen > tbody {
+	text-transform: capitalize;
+}

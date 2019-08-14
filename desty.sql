@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2019 at 03:35 PM
+-- Generation Time: Aug 14, 2019 at 07:25 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `desty`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_konsumens`
+--
+
+CREATE TABLE `tbl_konsumens` (
+  `konsumen_id` int(100) NOT NULL,
+  `konsumen_nama` varchar(200) NOT NULL,
+  `konsumen_telepon` varchar(100) NOT NULL,
+  `konsumen_alamat` text NOT NULL,
+  `konsumen_reg` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_konsumens`
+--
+
+INSERT INTO `tbl_konsumens` (`konsumen_id`, `konsumen_nama`, `konsumen_telepon`, `konsumen_alamat`, `konsumen_reg`) VALUES
+(1, 'agung senjaya', '085759794605', 'jl raya sukabumi', '2019-08-14 22:50:37'),
+(2, 'jajang nurja', '0878554487', 'jl raya selamat sentosa', '2019-08-14 23:40:14');
 
 -- --------------------------------------------------------
 
@@ -44,6 +66,12 @@ INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`) VALUES
 --
 
 --
+-- Indexes for table `tbl_konsumens`
+--
+ALTER TABLE `tbl_konsumens`
+  ADD PRIMARY KEY (`konsumen_id`);
+
+--
 -- Indexes for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
@@ -53,6 +81,11 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `tbl_konsumens`
+--
+ALTER TABLE `tbl_konsumens`
+  MODIFY `konsumen_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --

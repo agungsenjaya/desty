@@ -3,6 +3,9 @@
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.bundle.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/flash.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/flash.jquery.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/dataTables.dataTables.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/select2.min.js"></script>
 </body>
 </html>
