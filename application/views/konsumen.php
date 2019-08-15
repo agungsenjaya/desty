@@ -20,7 +20,7 @@
     			<th scope="col">#</th>
     			<th class="bg-light" scope="col">Nama Lengkap</th>
           <th scope="col">Nomor Telepon</th>
-    			<th scope="col">Actions</th>
+    			<th class="bg-light" scope="col">Actions</th>
     		</tr>
     	</thead>
     	<tbody>
@@ -34,7 +34,7 @@
             <th><?php echo $kuy->konsumen_id; ?></th>
             <td class="bg-light"><?php echo $kuy->konsumen_nama; ?></td>
             <td><?php echo $kuy->konsumen_telepon; ?></td>
-            <td><a href="<?php echo base_url();?>admin/konsumen_edit/<?php echo $kuy->konsumen_id ?>" title="">Actions</a></td>
+            <td class="bg-light"><a href="<?php echo base_url();?>admin/konsumen_edit/<?php echo $kuy->konsumen_id ?>" title="">Actions</a></td>
            </tr>
           <?php }?>
     	</tbody>

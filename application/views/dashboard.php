@@ -15,7 +15,7 @@
           </div>
           <!-- Content -->
           <div class="row row-xs">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
               <div class="card card-body bg-dark">
                 <h6 class="tx-white tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">total konsumen<i class="ml-1 fa fa-angle-down"></i></h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
@@ -23,27 +23,19 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
               <div class="card card-body">
-                <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">produk layak<i class="ml-1 fa fa-angle-down"></i></h6>
+                <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">total produk<i class="ml-1 fa fa-angle-down"></i></h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
                   <h1 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">200</h1>
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
               <div class="card card-body">
-                <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">produk cukup layak<i class="ml-1 fa fa-angle-down"></i></h6>
+                <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">total orders<i class="ml-1 fa fa-angle-down"></i></h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
                   <h1 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">010</h1>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <div class="card card-body">
-                <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">produk tidak layak<i class="ml-1 fa fa-angle-down"></i></h6>
-                <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                  <h1 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">023</h1>
                 </div>
               </div>
             </div>
@@ -52,7 +44,7 @@
           <hr>
           <!-- Produk -->
           <div class="mg-t-10">
-            <h4 class="mg-b-20 tx-spacing--1">Daftar Produk</h4>
+            <h4 class="mg-b-20 tx-spacing--1">Produk Kami</h4>
             <div class="row row-xs">
               <div class="col-md-4">
                 <img src="//via.placeholder.com/600x300" width="100%" alt="" class="rounded">

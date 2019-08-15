@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 14, 2019 at 07:25 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Host: localhost:3306
+-- Waktu pembuatan: 15 Agu 2019 pada 10.09
+-- Versi server: 5.7.19
+-- Versi PHP: 7.1.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_konsumens`
+-- Struktur dari tabel `tbl_konsumens`
 --
 
 CREATE TABLE `tbl_konsumens` (
@@ -35,17 +37,40 @@ CREATE TABLE `tbl_konsumens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_konsumens`
+-- Dumping data untuk tabel `tbl_konsumens`
 --
 
 INSERT INTO `tbl_konsumens` (`konsumen_id`, `konsumen_nama`, `konsumen_telepon`, `konsumen_alamat`, `konsumen_reg`) VALUES
-(1, 'agung senjaya', '085759794605', 'jl raya sukabumi', '2019-08-14 22:50:37'),
-(2, 'jajang nurja', '0878554487', 'jl raya selamat sentosa', '2019-08-14 23:40:14');
+(1, 'agung senjaya', '085759794605', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim', '2019-08-14 22:50:37'),
+(2, 'jajang jahanam', '0878554487', 'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida', '2019-08-14 23:40:14'),
+(6, 'dadan kurniawan', '05544554', 'jl raya senjaya timur lampung barat ', '2019-08-15 10:24:57');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_users`
+-- Struktur dari tabel `tbl_produks`
+--
+
+CREATE TABLE `tbl_produks` (
+  `produk_id` int(100) NOT NULL,
+  `produk_nama` varchar(200) NOT NULL,
+  `produk_uk` varchar(200) NOT NULL,
+  `produk_ds` varchar(200) NOT NULL,
+  `produk_wr` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_produks`
+--
+
+INSERT INTO `tbl_produks` (`produk_id`, `produk_nama`, `produk_uk`, `produk_ds`, `produk_wr`) VALUES
+(1, 'herbalife', '65', '80', '80'),
+(2, 'kerasakti', '45', '32', '20');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_users`
 --
 
 CREATE TABLE `tbl_users` (
@@ -55,7 +80,7 @@ CREATE TABLE `tbl_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_users`
+-- Dumping data untuk tabel `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`) VALUES
@@ -66,31 +91,46 @@ INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`) VALUES
 --
 
 --
--- Indexes for table `tbl_konsumens`
+-- Indeks untuk tabel `tbl_konsumens`
 --
 ALTER TABLE `tbl_konsumens`
   ADD PRIMARY KEY (`konsumen_id`);
 
 --
--- Indexes for table `tbl_users`
+-- Indeks untuk tabel `tbl_produks`
+--
+ALTER TABLE `tbl_produks`
+  ADD PRIMARY KEY (`produk_id`);
+
+--
+-- Indeks untuk tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tbl_konsumens`
+-- AUTO_INCREMENT untuk tabel `tbl_konsumens`
 --
 ALTER TABLE `tbl_konsumens`
-  MODIFY `konsumen_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `konsumen_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `tbl_users`
+-- AUTO_INCREMENT untuk tabel `tbl_produks`
+--
+ALTER TABLE `tbl_produks`
+  MODIFY `produk_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
   MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

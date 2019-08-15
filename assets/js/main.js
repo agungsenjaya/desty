@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('select').select2();
 	//Flash
-	$('.pg-1, .pg-2, .gj-1, .jb-1, .kt-1, .us-1').flashjs({
+	$('.pg-1, .pg-2, .pg-3, .pg-4 .gj-1, .jb-1, .kt-1, .us-1').flashjs({
 		timeout: 8000
 	});
 	// Datatable Ajax

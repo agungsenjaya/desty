@@ -8,6 +8,7 @@
 	<ul class="nav nav-aside">
           <li class="nav-label">Menu utama</li>
           <li class="nav-item"><a href="<?php echo base_url(); ?>admin" class="nav-link"><i class="fa fa-flickr mr-2"></i><span>Dashboard</span></a></li>
+          <li class="nav-item"><a href="<?php echo base_url(); ?>admin/produk" class="nav-link"><i class="fa fa-barcode mr-2"></i><span>Produk</span></a></li>
           <li class="nav-item"><a href="<?php echo base_url(); ?>admin/konsumen" class="nav-link"><i class="fa fa-github-square mr-2"></i><span>Konsumen</span></a></li>
           <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-server mr-2"></i><span>Progression</span></a></li>
           <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-database mr-2"></i><span>Resource</span></a></li>

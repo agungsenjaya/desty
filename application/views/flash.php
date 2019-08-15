@@ -7,6 +7,14 @@
 			<div class="flash-message pg-2 flash-info">
 				Data pegawai berhasil di update silahkan cek, Terima kasih.
 			</div>
+		<?php elseif ($this->session->flashdata('pg-3')): ?>
+			<div class="flash-message pg-3 flash-info">
+				Konsumen yang anda pilih telah kami hapus dari sistem, Terima kasih.
+			</div>
+		<?php elseif ($this->session->flashdata('pg-4')): ?>
+			<div class="flash-message pg-4 flash-info">
+				Data tidak berhasil ditambahkan, Nama Produk sudah terdaftar, Terima kasih.
+			</div>
 		<?php elseif ($this->session->flashdata('gj-1')): ?>
 			<div class="flash-message gj-1 flash-success">
 				Penggajian tidak berhasil, Nomor KTP tersebut ditanggal yang sama sudah di gajih, Terima kasih.
