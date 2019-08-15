@@ -46,15 +46,22 @@
           <div class="mg-t-10">
             <h4 class="mg-b-20 tx-spacing--1">Produk Kami</h4>
             <div class="row row-xs">
+              <?php 
+                $sql = "SELECT * FROM tbl_produks";
+                $query = $this->db->query($sql);
+                if ($query->num_rows() > 0) {
+                  foreach ($query->result() as $hay) {
+               ?>
               <div class="col-md-4">
-                <img src="//via.placeholder.com/600x300" width="100%" alt="" class="rounded">
+                <div class="card">
+                  <img src="<?php echo base_url(); ?>assets/produk.jpg" width="100%" alt="">
+                  <div class="px-3 py-2">
+                    <h5 class="text-uppercase tx-sans tx-bold tx-11 tx-spacing-1"><?php echo $hay->produk_nama ?></h5>
+                    <p class="text-muted"><span class="text-capitalize"><?php echo $hay->produk_nama ?></span> merupakan salah satu produk unggulan kami.</p>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-4">
-                <img src="//via.placeholder.com/600x300" width="100%" alt="" class="rounded">
-              </div>
-              <div class="col-md-4">
-                <img src="//via.placeholder.com/600x300" width="100%" alt="" class="rounded">
-              </div>
+            <?php }} ?>
             </div>
           </div>
           <!-- End Produk -->

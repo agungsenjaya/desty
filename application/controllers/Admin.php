@@ -123,25 +123,35 @@ class Admin extends CI_Controller
 		$this->load->view('layouts/footer');
 	}
 	function produk_update(){
-		$id = $this->input->post('konsumen_id');
-		$nama = $this->input->post('konsumen_nama');
-		$telepon = $this->input->post('konsumen_telepon');
-		$alamat = $this->input->post('konsumen_alamat');
+		$id = $this->input->post('produk_id');
+		$nama = $this->input->post('produk_nama');
+		$uk = $this->input->post('produk_uk');
+		$ds = $this->input->post('produk_ds');
+		$wr = $this->input->post('produk_wr');
 		$data = array(
-	      'konsumen_nama' => $nama,
-	      'konsumen_telepon' => $telepon,
-	      'konsumen_alamat' => $alamat,
+	      'produk_nama' => $nama,
+	      'produk_ds' => $ds,
+	      'produk_wr' => $wr,
+	      'produk_uk' => $uk
 	    );
 	    $where = array(
-	        'konsumen_id' => $id
+	        'produk_id' => $id
 	      );
-	    $this->m_admin->konsumen_update($where,$data,'tbl_konsumens');
-	    redirect(base_url('admin/konsumen'));
+	    $this->m_admin->produk_update($where,$data,'tbl_produks');
+	    redirect(base_url('admin/produk'));
 	}
 	function produk_delete($id){
-		$where = array('konsumen_id' => $id);
-		$this->m_admin->konsumen_delete($where,'tbl_konsumens');
-		$this->session->set_flashdata('pg-3', 'This is test message');
-		redirect(base_url('admin/konsumen'));
+		$where = array('produk_id' => $id);
+		$this->m_admin->produk_delete($where,'tbl_produks');
+		$this->session->set_flashdata('pg-5', 'This is test message');
+		redirect(base_url('admin/produk'));
+	}
+	// Orders
+	function orders(){
+		$this->load->view('layouts/header');
+		$this->load->view('layouts/sidebar');
+		$this->load->view('flash');
+		$this->load->view('orders');
+		$this->load->view('layouts/footer');
 	}
 }

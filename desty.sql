@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Waktu pembuatan: 15 Agu 2019 pada 10.09
--- Versi server: 5.7.19
--- Versi PHP: 7.1.14
+-- Host: 127.0.0.1
+-- Generation Time: Aug 15, 2019 at 04:48 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_konsumens`
+-- Table structure for table `tbl_konsumens`
 --
 
 CREATE TABLE `tbl_konsumens` (
@@ -37,7 +35,7 @@ CREATE TABLE `tbl_konsumens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_konsumens`
+-- Dumping data for table `tbl_konsumens`
 --
 
 INSERT INTO `tbl_konsumens` (`konsumen_id`, `konsumen_nama`, `konsumen_telepon`, `konsumen_alamat`, `konsumen_reg`) VALUES
@@ -48,7 +46,24 @@ INSERT INTO `tbl_konsumens` (`konsumen_id`, `konsumen_nama`, `konsumen_telepon`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_produks`
+-- Table structure for table `tbl_orders`
+--
+
+CREATE TABLE `tbl_orders` (
+  `order_id` int(100) NOT NULL,
+  `konsumen_id` int(100) NOT NULL,
+  `order_reg` int(100) NOT NULL,
+  `order_wr` int(100) NOT NULL,
+  `order_uk` int(100) NOT NULL,
+  `order_ds` int(100) NOT NULL,
+  `order_hasil` varchar(100) NOT NULL,
+  `produk_id` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_produks`
 --
 
 CREATE TABLE `tbl_produks` (
@@ -60,17 +75,17 @@ CREATE TABLE `tbl_produks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_produks`
+-- Dumping data for table `tbl_produks`
 --
 
 INSERT INTO `tbl_produks` (`produk_id`, `produk_nama`, `produk_uk`, `produk_ds`, `produk_wr`) VALUES
-(1, 'herbalife', '65', '80', '80'),
-(2, 'kerasakti', '45', '32', '20');
+(2, 'kerasakti', '45', '32', '20'),
+(3, 'keripik dusta', '80', '60', '70');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_users`
+-- Table structure for table `tbl_users`
 --
 
 CREATE TABLE `tbl_users` (
@@ -80,7 +95,7 @@ CREATE TABLE `tbl_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_users`
+-- Dumping data for table `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`) VALUES
@@ -91,46 +106,53 @@ INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`) VALUES
 --
 
 --
--- Indeks untuk tabel `tbl_konsumens`
+-- Indexes for table `tbl_konsumens`
 --
 ALTER TABLE `tbl_konsumens`
   ADD PRIMARY KEY (`konsumen_id`);
 
 --
--- Indeks untuk tabel `tbl_produks`
+-- Indexes for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indexes for table `tbl_produks`
 --
 ALTER TABLE `tbl_produks`
   ADD PRIMARY KEY (`produk_id`);
 
 --
--- Indeks untuk tabel `tbl_users`
+-- Indexes for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_konsumens`
+-- AUTO_INCREMENT for table `tbl_konsumens`
 --
 ALTER TABLE `tbl_konsumens`
   MODIFY `konsumen_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
--- AUTO_INCREMENT untuk tabel `tbl_produks`
+-- AUTO_INCREMENT for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_produks`
 --
 ALTER TABLE `tbl_produks`
-  MODIFY `produk_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `produk_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT untuk tabel `tbl_users`
+-- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
   MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
