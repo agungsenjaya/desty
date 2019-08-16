@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/select2.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/select2-bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
 </head>
 <body class="container-fluid">
 	<div class="row">

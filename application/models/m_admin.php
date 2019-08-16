@@ -33,4 +33,11 @@ class M_admin extends CI_Model
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+	// Order
+	function order_store($data,$table){
+		$this->db->insert($table,$data);
+	}
+	function order_edit($where, $table){
+		return $this->db->get_where($table,$where);
+	}
 }

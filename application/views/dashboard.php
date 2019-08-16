@@ -19,7 +19,13 @@
               <div class="card card-body bg-dark">
                 <h6 class="tx-white tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">total konsumen<i class="ml-1 fa fa-angle-down"></i></h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                  <h1 class="tx-white tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">050</h1>
+                  <h1 class="tx-white tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">
+                    <?php 
+                    $this->db->select('*')->from('tbl_konsumens'); 
+                    $q = $this->db->get(); 
+                    echo $q->num_rows();
+                    ?>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -27,7 +33,13 @@
               <div class="card card-body">
                 <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">total produk<i class="ml-1 fa fa-angle-down"></i></h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                  <h1 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">200</h1>
+                  <h1 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">
+                    <?php 
+                    $this->db->select('*')->from('tbl_produks'); 
+                    $q = $this->db->get(); 
+                    echo $q->num_rows();
+                     ?>
+                  </h1>
                 </div>
               </div>
             </div>
@@ -35,7 +47,13 @@
               <div class="card card-body">
                 <h6 class="tx-uppercase tx-11 tx-spacing-1 tx-color-02 tx-semibold mg-b-8">total orders<i class="ml-1 fa fa-angle-down"></i></h6>
                 <div class="d-flex d-lg-block d-xl-flex align-items-end">
-                  <h1 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">010</h1>
+                  <h1 class="tx-normal tx-rubik mg-b-0 mg-r-5 lh-1">
+                    <?php 
+                    $this->db->select('*')->from('tbl_orders'); 
+                    $q = $this->db->get(); 
+                    echo $q->num_rows();
+                    ?>
+                  </h1>
                 </div>
               </div>
             </div>

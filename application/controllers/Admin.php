@@ -12,10 +12,20 @@ class Admin extends CI_Controller
 			redirect(base_url("login"));
 		}
 			$this->load->model('m_admin');
+			$this->load->library('pdf');
     		$this->load->database();
+	}
+	function laporan(){
+		$this->pdf->setPaper('A4', 'potrait');
+	    $this->pdf->filename = "laporan-petanikode.pdf";
+	    $this->pdf->load_view('table_report');
 	}
 	function json_konsumen(){
 		$data = $this->db->get("tbl_konsumens")->result();
+	    echo json_encode($data);
+	}
+	function json_produk(){
+		$data = $this->db->get("tbl_produks")->result();
 	    echo json_encode($data);
 	}
 	function index(){
@@ -152,6 +162,41 @@ class Admin extends CI_Controller
 		$this->load->view('layouts/sidebar');
 		$this->load->view('flash');
 		$this->load->view('orders');
+		$this->load->view('layouts/footer');
+	}
+	function orders_store(){
+	  	$ksm = $this->input->post('konsumen_id');
+	  	$prd = $this->input->post('produk_id');
+	  	$hsl = $this->input->post('order_hasil');
+	  	$reg = date('Y-m-d H:i:s');
+	  	$uk = $this->input->post('order_uk');
+	  	$ds = $this->input->post('order_ds');
+	  	$wr = $this->input->post('order_wr');
+	  	$data = array(
+	  		'konsumen_id' => $ksm, 
+	  		'produk_id' => $prd, 
+	  		'order_reg' => $reg, 
+	  		'order_hasil' => $hsl , 
+	  		'order_uk' => $uk , 
+	  		'order_ds' => $ds , 
+	  		'order_wr' => $wr , 
+	  	);
+	  	$this->m_admin->order_store($data,'tbl_orders');
+		redirect(base_url('admin/orders'));
+	}
+	function orders_edit($id){
+		$where = array('order_id' => $id);
+		$data['orders'] = $this->m_admin->order_edit($where,'tbl_orders')->result();
+		$this->load->view('layouts/header');
+		$this->load->view('layouts/sidebar');
+		$this->load->view('orders_edit', $data);
+		$this->load->view('layouts/footer');
+	}
+	// Hasil
+	function hasil(){
+		$this->load->view('layouts/header');
+		$this->load->view('layouts/sidebar');
+		$this->load->view('hasil');
 		$this->load->view('layouts/footer');
 	}
 }

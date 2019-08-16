@@ -17,10 +17,10 @@
     <table class="table dataTable no-footer" id="konsumen">
       <thead class="tx-sans tx-11 text-uppercase tx-bold tx-spacing-1">
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">ID ORDER</th>
           <th class="bg-light" scope="col">Id Konsumen</th>
           <th scope="col">Nama Produk</th>
-          <th scope="col">Orders Date</th>
+          <th class="bg-light" scope="col">Orders Date</th>
           <th scope="col">Hasil</th>
           <th class="bg-light" scope="col">Details</th>
         </tr>
@@ -33,11 +33,18 @@
             foreach ($qq->result() as $kuy) {
            ?>
            <tr class="item<?php echo $kuy->order_id?>">
-            <th><?php echo $kuy->order_id; ?></th>
+            <th><?php echo $kuy->order_id?></th>
             <td class="bg-light"><?php echo $kuy->konsumen_id; ?></td>
-            <td><?php echo $kuy->order_reg; ?></td>
+            <td class="text-capitalize"><?php 
+            $jk = "SELECT produk_nama FROM tbl_produks WHERE produk_id=".$kuy->produk_id;
+            $jh = $this->db->query($jk)->result();
+            foreach ($jh as $hj) {
+              echo $hj->produk_nama;
+            }
+            ?></td>
+            <td class="bg-light"><?php echo $kuy->order_reg; ?></td>
             <td><?php echo $kuy->order_hasil; ?></td>
-            <td class="bg-light"><a href="<?php echo base_url();?>admin/order_edit/<?php echo $kuy->order_id ?>" title="">Actions</a></td>
+            <td class="bg-light"><a href="<?php echo base_url();?>admin/orders_edit/<?php echo $kuy->order_id ?>" title="">Actions</a></td>
            </tr>
           <?php }?>
       </tbody>
@@ -54,49 +61,64 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="<?php echo base_url(); ?>admin/konsumen_store" method="POST">
+        <form action="<?php echo base_url(); ?>admin/orders_store" method="POST">
           <div class="form-group">
             <label for="">ID Konsumen</label>
-            <select id="drod" class="btn-block" required>
+            <select id="drod" class="btn-block" required name="konsumen_id">
               <option value="">Masukan ID Konsumen</option>
               <?php 
               $oml = "SELECT * FROM tbl_konsumens";
               $kk = $this->db->query($oml);
               foreach ($kk->result() as $kuy) {
               ?>
-              <option value="<?php echo $kuy->konsumen_id ?>"><?php echo $kuy->konsumen_id?> <?php echo $kuy->konsumen_nama?></option>
+              <option value="<?php echo $kuy->konsumen_id ?>"><?php echo $kuy->konsumen_id?> - <?php echo $kuy->konsumen_nama?></option>
               <?php } ?>
             </select>
           </div>
           <div class="form-group">
             <label for="">Pilihan Produk</label>
-            <select id="drad" class="btn-block" required>
+            <select id="drad" class="btn-block" required name="produk_id">
               <option value="">Select Produk</option>
               <?php 
               $aml = "SELECT * FROM tbl_produks";
               $gg = $this->db->query($aml);
               foreach ($gg->result() as $kuy) {
               ?>
-              <option value="<?php echo $kuy->produk_id ?>"><?php echo $kuy->produk_id?> <?php echo $kuy->produk_nama?></option>
+              <option value="<?php echo $kuy->produk_id ?>"><?php echo $kuy->produk_nama?></option>
               <?php } ?>
             </select>
           </div>
           <div class="form-row">
             <div class="form-group col">
+              <label for="">Warna Produk</label>
+              <input disabled type="text" id="wa" class="form-control" placeholder="Nilai kosong">
+            </div>
+            <div class="form-group col">
+              <label for="">Ukuran Produk</label>
+              <input disabled type="text" id="wi" class="form-control" placeholder="Nilai kosong">
+            </div>
+            <div class="form-group col">
+              <label for="">Desain Produk</label>
+              <input disabled type="text" id="wu" class="form-control" placeholder="Nilai kosong">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
               <label for="">Warna</label>
-              <input type="text" name="produk_wr" class="form-control" placeholder="Masukan warna" required>
+              <input type="text" id="ta" name="order_wr" class="form-control" placeholder="Masukan warna" required>
             </div>
             <div class="form-group col">
               <label for="">Ukuran</label>
-              <input type="text" name="produk_uk" class="form-control" placeholder="Masukan ukuran" required>
+              <input type="text" id="ti" name="order_uk" class="form-control" placeholder="Masukan ukuran" required>
             </div>
             <div class="form-group col">
               <label for="">Desain</label>
-              <input type="text" name="produk_ds" class="form-control" placeholder="Masukan desain" required>
+              <input type="text" id="tu" name="order_ds" class="form-control" placeholder="Masukan desain" required>
+              <input type="hidden" name="order_hasil" class="form-control" id="se">
             </div>
           </div>
             <button type="button" class="btn btn-secondary btn-uppercase mg-l-5" data-dismiss="modal">Close</button>
-        <button type="submit" id="buha" class="btn btn-dark btn-uppercase mg-l-5" disabled>Save changes</button>
+            <button type="submit" id="buha" class="btn btn-primary btn-uppercase mg-l-5" disabled>Save changes</button>
           </div>
         </form>
       </div>
