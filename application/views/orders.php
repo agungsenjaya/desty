@@ -22,7 +22,7 @@
           <th scope="col">Nama Produk</th>
           <th scope="col">Orders Date</th>
           <th scope="col">Hasil</th>
-          <th class="bg-light" scope="col">Actions</th>
+          <th class="bg-light" scope="col">Details</th>
         </tr>
       </thead>
       <tbody>
@@ -44,34 +44,59 @@
     </table>
     <!-- End Content -->
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title tx-spacing--1 ml-auto" id="exampleModalLabel">Form Tambah Konsumen</h5>
+        <h5 class="modal-title tx-spacing--1 ml-auto" id="exampleModalLabel">Form Tambah Orders</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form action="<?php echo base_url(); ?>admin/konsumen_store" method="POST">
-          <div class="form-row">
-            <div class="form-group col">
-              <label for="">Nama Lengkap</label>
-              <input type="text" name="konsumen_nama" class="form-control" placeholder="Masukan nama" required>
-            </div>
-            <div class="form-group col">
-              <label for="">No Telepon</label>
-              <input type="text" name="konsumen_telepon" class="form-control" placeholder="Masukan no telepon" required>
-            </div>
+          <div class="form-group">
+            <label for="">ID Konsumen</label>
+            <select id="drod" class="btn-block" required>
+              <option value="">Masukan ID Konsumen</option>
+              <?php 
+              $oml = "SELECT * FROM tbl_konsumens";
+              $kk = $this->db->query($oml);
+              foreach ($kk->result() as $kuy) {
+              ?>
+              <option value="<?php echo $kuy->konsumen_id ?>"><?php echo $kuy->konsumen_id?> <?php echo $kuy->konsumen_nama?></option>
+              <?php } ?>
+            </select>
           </div>
           <div class="form-group">
-            <label for="">Alamat</label>
-            <textarea name="konsumen_alamat" class="form-control" placeholder="Masukan alamat" required></textarea>
+            <label for="">Pilihan Produk</label>
+            <select id="drad" class="btn-block" required>
+              <option value="">Select Produk</option>
+              <?php 
+              $aml = "SELECT * FROM tbl_produks";
+              $gg = $this->db->query($aml);
+              foreach ($gg->result() as $kuy) {
+              ?>
+              <option value="<?php echo $kuy->produk_id ?>"><?php echo $kuy->produk_id?> <?php echo $kuy->produk_nama?></option>
+              <?php } ?>
+            </select>
           </div>
-          <div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="">Warna</label>
+              <input type="text" name="produk_wr" class="form-control" placeholder="Masukan warna" required>
+            </div>
+            <div class="form-group col">
+              <label for="">Ukuran</label>
+              <input type="text" name="produk_uk" class="form-control" placeholder="Masukan ukuran" required>
+            </div>
+            <div class="form-group col">
+              <label for="">Desain</label>
+              <input type="text" name="produk_ds" class="form-control" placeholder="Masukan desain" required>
+            </div>
+          </div>
             <button type="button" class="btn btn-secondary btn-uppercase mg-l-5" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-dark btn-uppercase mg-l-5">Save changes</button>
+        <button type="submit" id="buha" class="btn btn-dark btn-uppercase mg-l-5" disabled>Save changes</button>
           </div>
         </form>
       </div>

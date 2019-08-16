@@ -14,7 +14,7 @@ class Admin extends CI_Controller
 			$this->load->model('m_admin');
     		$this->load->database();
 	}
-	function json(){
+	function json_konsumen(){
 		$data = $this->db->get("tbl_konsumens")->result();
 	    echo json_encode($data);
 	}

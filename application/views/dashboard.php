@@ -52,12 +52,15 @@
                 if ($query->num_rows() > 0) {
                   foreach ($query->result() as $hay) {
                ?>
-              <div class="col-md-4">
-                <div class="card">
-                  <img src="<?php echo base_url(); ?>assets/produk.jpg" width="100%" alt="">
+              <div class="col-md-3">
+                <div class="bg-dark rounded text-white text-center">
+                  <!-- <img src="<?php echo base_url(); ?>assets/produk.jpg" width="100%" alt=""> -->
+                  <div class="py-3">
+                    <i class="fa fa-houzz display-1"></i>
+                  </div>
                   <div class="px-3 py-2">
-                    <h5 class="text-uppercase tx-sans tx-bold tx-11 tx-spacing-1"><?php echo $hay->produk_nama ?></h5>
-                    <p class="text-muted"><span class="text-capitalize"><?php echo $hay->produk_nama ?></span> merupakan salah satu produk unggulan kami.</p>
+                    <h5 class="text-uppercase tx-sans tx-white tx-bold tx-14 tx-spacing-1"><?php echo $hay->produk_nama ?></h5>
+                    <p class="text-white"><span class="text-capitalize"><?php echo $hay->produk_nama ?></span> merupakan salah satu produk unggulan kami.</p>
                   </div>
                 </div>
               </div>

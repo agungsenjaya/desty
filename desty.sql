@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 15, 2019 at 04:48 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Host: localhost:3306
+-- Waktu pembuatan: 16 Agu 2019 pada 10.21
+-- Versi server: 5.7.19
+-- Versi PHP: 7.1.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_konsumens`
+-- Struktur dari tabel `tbl_konsumens`
 --
 
 CREATE TABLE `tbl_konsumens` (
@@ -35,7 +37,7 @@ CREATE TABLE `tbl_konsumens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_konsumens`
+-- Dumping data untuk tabel `tbl_konsumens`
 --
 
 INSERT INTO `tbl_konsumens` (`konsumen_id`, `konsumen_nama`, `konsumen_telepon`, `konsumen_alamat`, `konsumen_reg`) VALUES
@@ -46,7 +48,7 @@ INSERT INTO `tbl_konsumens` (`konsumen_id`, `konsumen_nama`, `konsumen_telepon`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_orders`
+-- Struktur dari tabel `tbl_orders`
 --
 
 CREATE TABLE `tbl_orders` (
@@ -63,7 +65,7 @@ CREATE TABLE `tbl_orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_produks`
+-- Struktur dari tabel `tbl_produks`
 --
 
 CREATE TABLE `tbl_produks` (
@@ -75,7 +77,7 @@ CREATE TABLE `tbl_produks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_produks`
+-- Dumping data untuk tabel `tbl_produks`
 --
 
 INSERT INTO `tbl_produks` (`produk_id`, `produk_nama`, `produk_uk`, `produk_ds`, `produk_wr`) VALUES
@@ -85,7 +87,7 @@ INSERT INTO `tbl_produks` (`produk_id`, `produk_nama`, `produk_uk`, `produk_ds`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_users`
+-- Struktur dari tabel `tbl_users`
 --
 
 CREATE TABLE `tbl_users` (
@@ -95,7 +97,7 @@ CREATE TABLE `tbl_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_users`
+-- Dumping data untuk tabel `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`) VALUES
@@ -106,53 +108,58 @@ INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_password`) VALUES
 --
 
 --
--- Indexes for table `tbl_konsumens`
+-- Indeks untuk tabel `tbl_konsumens`
 --
 ALTER TABLE `tbl_konsumens`
   ADD PRIMARY KEY (`konsumen_id`);
 
 --
--- Indexes for table `tbl_orders`
+-- Indeks untuk tabel `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `tbl_produks`
+-- Indeks untuk tabel `tbl_produks`
 --
 ALTER TABLE `tbl_produks`
   ADD PRIMARY KEY (`produk_id`);
 
 --
--- Indexes for table `tbl_users`
+-- Indeks untuk tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tbl_konsumens`
+-- AUTO_INCREMENT untuk tabel `tbl_konsumens`
 --
 ALTER TABLE `tbl_konsumens`
   MODIFY `konsumen_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `tbl_orders`
+-- AUTO_INCREMENT untuk tabel `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
   MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `tbl_produks`
+-- AUTO_INCREMENT untuk tabel `tbl_produks`
 --
 ALTER TABLE `tbl_produks`
   MODIFY `produk_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `tbl_users`
+-- AUTO_INCREMENT untuk tabel `tbl_users`
 --
 ALTER TABLE `tbl_users`
   MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

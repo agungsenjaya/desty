@@ -9,8 +9,9 @@
 	<link rel="stylesheet" href="<?php echo base_url(''); ?>assets/css/flash.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/app.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/select2.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/select2-bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css">
 </head>
 <body class="container-fluid">
 	<div class="row">
