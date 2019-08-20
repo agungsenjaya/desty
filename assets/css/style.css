@@ -12,3 +12,6 @@
 #konsumen > tbody {
 	text-transform: capitalize;
 }
+body {
+	/*background-image: url('../bg.jpg');*/
+}

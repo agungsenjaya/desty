@@ -70,11 +70,11 @@
                 if ($query->num_rows() > 0) {
                   foreach ($query->result() as $hay) {
                ?>
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <div class="bg-dark rounded text-white text-center">
-                  <!-- <img src="<?php echo base_url(); ?>assets/produk.jpg" width="100%" alt=""> -->
-                  <div class="py-3">
-                    <i class="fa fa-houzz display-1"></i>
+                  <div class="pb-3">
+                  <img src="<?php echo base_url(); ?>assets/produk.jpg" width="100%" alt="">
+                    <!-- <i class="fa fa-houzz display-1"></i> -->
                   </div>
                   <div class="px-3 py-2">
                     <h5 class="text-uppercase tx-sans tx-white tx-bold tx-14 tx-spacing-1"><?php echo $hay->produk_nama ?></h5>
