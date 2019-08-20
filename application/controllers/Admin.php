@@ -16,8 +16,8 @@ class Admin extends CI_Controller
     		$this->load->database();
 	}
 	function laporan(){
-		$this->pdf->setPaper('A4', 'potrait');
-	    $this->pdf->filename = "laporan-petanikode.pdf";
+		$this->pdf->setPaper('A4', 'landscape');
+	    $this->pdf->filename = "laporan-orders.pdf";
 	    $this->pdf->load_view('table_report');
 	}
 	function json_konsumen(){
@@ -172,6 +172,9 @@ class Admin extends CI_Controller
 	  	$uk = $this->input->post('order_uk');
 	  	$ds = $this->input->post('order_ds');
 	  	$wr = $this->input->post('order_wr');
+	  	$or_wr = $this->input->post('or_wr');
+	  	$or_uk = $this->input->post('or_uk');
+	  	$or_ds = $this->input->post('or_ds');
 	  	$data = array(
 	  		'konsumen_id' => $ksm, 
 	  		'produk_id' => $prd, 
@@ -180,6 +183,9 @@ class Admin extends CI_Controller
 	  		'order_uk' => $uk , 
 	  		'order_ds' => $ds , 
 	  		'order_wr' => $wr , 
+	  		'or_wr' => $or_wr, 
+	  		'or_uk' => $or_uk, 
+	  		'or_ds' => $or_ds, 
 	  	);
 	  	$this->m_admin->order_store($data,'tbl_orders');
 		redirect(base_url('admin/orders'));

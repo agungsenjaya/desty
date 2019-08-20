@@ -53,14 +53,29 @@
                 <td><?php echo $key->order_wr ?></td>
               </tr>
               <tr>
+                <td class="tx-bold">K.WARNA</td>
+                <td>:</td>
+                <td><?php echo $key->or_wr ?></td>
+              </tr>
+              <tr>
                 <td class="tx-bold">ORDER UKURAN</td>
                 <td>:</td>
                 <td><?php echo $key->order_uk ?></td>
               </tr>
               <tr>
+                <td class="tx-bold">K.UKURAN</td>
+                <td>:</td>
+                <td><?php echo $key->or_uk ?></td>
+              </tr>
+              <tr>
                 <td class="tx-bold">ORDER DESAIN</td>
                 <td>:</td>
                 <td><?php echo $key->order_ds ?></td>
+              </tr>
+              <tr>
+                <td class="tx-bold">K.DESAIN</td>
+                <td>:</td>
+                <td><?php echo $key->or_ds ?></td>
               </tr>
               <tr>
                 <td class="tx-bold">TOTAL ORDER</td>

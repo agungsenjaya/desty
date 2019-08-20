@@ -115,6 +115,10 @@
               <label for="">Desain</label>
               <input type="text" id="tu" name="order_ds" class="form-control" placeholder="Masukan desain" required>
               <input type="hidden" name="order_hasil" class="form-control" id="se">
+
+              <input type="hidden" name="or_wr" class="form-control" id="ma">
+              <input type="hidden" name="or_uk" class="form-control" id="mi">
+              <input type="hidden" name="or_ds" class="form-control" id="mu">
             </div>
           </div>
             <button type="button" class="btn btn-secondary btn-uppercase mg-l-5" data-dismiss="modal">Close</button>

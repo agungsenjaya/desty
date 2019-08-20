@@ -28,8 +28,11 @@
         <th>KONSUMEN_ID</th>
         <th>PRODUK_ID</th>
         <th>WARNA</th>
+        <th>K.WARNA</th>
         <th>UKURAN</th>
+        <th>K.UKURAN</th>
         <th>DESAIN</th>
+        <th>K.DESAIN</th>
         <th>STATUS</th>
       </tr>
     </thead>
@@ -44,8 +47,11 @@
         <td><?php echo $sa->konsumen_id; ?></td>
         <td><?php echo $sa->produk_id; ?></td>
         <td><?php echo $sa->order_wr; ?></td>
+        <td><?php echo $sa->or_wr; ?></td>
         <td><?php echo $sa->order_uk; ?></td>
+        <td><?php echo $sa->or_uk; ?></td>
         <td><?php echo $sa->order_ds; ?></td>
+        <td><?php echo $sa->or_ds; ?></td>
         <td><?php echo $sa->order_hasil; ?></td>
       </tr>
       <?php endforeach ?>

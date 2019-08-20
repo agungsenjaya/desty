@@ -48,6 +48,10 @@ $(document).ready(function() {
 	var a = 'Layak';
 	var b = 'Cukup Layak';
 	var c = 'Tidak Layak';
+
+	var ma = 'Baik';
+	var mi = 'Cukup';
+	var mu = 'Kurang';
 	$('#buha').on('click',function() {
 		// event.preventDefault();
 		var ab = $('#wa').val();
@@ -55,10 +59,13 @@ $(document).ready(function() {
 		var so = ab - 10;
 		if (sa >= so && sa < ab ) {
 			var sah1 = b;
+			$('#ma').val(mi);
 		}else if(sa >= ab){
 			var sah1 = a;
+			$('#ma').val(ma);
 		}else{
 			var sah1 = c;
+			$('#ma').val(mu);
 		}
 		// $('#sa').text(sah1);
 		var cas = sah1;
@@ -67,10 +74,13 @@ $(document).ready(function() {
 		var tu = ta - 10;
 		if (ti >= tu && ti < ta ) {
 			var sah2 = b;
+			$('#mi').val(mi);
 		}else if(ti >= ta){
 			var sah2 = a;
+			$('#mi').val(ma);
 		}else{
 			var sah2 = c;
+			$('#mi').val(mu);
 		}
 		// $('#si').text(sah2);
 		var cis = sah2;
@@ -79,10 +89,13 @@ $(document).ready(function() {
 		var lu = la - 10;
 		if (li >= lu && li < la ) {
 			var sah3 = b;
+			$('#mu').val(mi);
 		}else if(li >= la){
 			var sah3 = a;
+			$('#mu').val(ma);
 		}else{
 			var sah3 = c;
+			$('#mu').val(mu);
 		}
 		// $('#su').text(sah3);
 		var cus = sah3;
