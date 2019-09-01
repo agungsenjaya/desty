@@ -17,9 +17,11 @@
     <table class="table dataTable no-footer" id="konsumen">
     	<thead class="tx-sans tx-11 text-uppercase tx-bold tx-spacing-1">
     		<tr>
-    			<th scope="col">#</th>
-    			<th class="bg-light" scope="col">Nama Lengkap</th>
-          <th scope="col">Nomor Telepon</th>
+    			<th scope="col">konsumen_id</th>
+    			<th class="bg-light" scope="col">konsumen_nama</th>
+          <th scope="col">konsumen_telepon</th>
+          <th class="bg-light">konsumen_alamat</th>
+          <th scope="col">konsumen_reg</th>
     			<th class="bg-light" scope="col">Actions</th>
     		</tr>
     	</thead>
@@ -34,6 +36,8 @@
             <th><?php echo $kuy->konsumen_id; ?></th>
             <td class="bg-light"><?php echo $kuy->konsumen_nama; ?></td>
             <td><?php echo $kuy->konsumen_telepon; ?></td>
+            <td class="bg-light"><?php echo $kuy->konsumen_alamat; ?></td>
+            <td><?php echo $kuy->konsumen_reg; ?></td>
             <td class="bg-light"><a href="<?php echo base_url();?>admin/konsumen_edit/<?php echo $kuy->konsumen_id ?>" title="">Actions</a></td>
            </tr>
           <?php }?>

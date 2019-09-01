@@ -17,11 +17,11 @@
     <table class="table dataTable no-footer" id="konsumen">
     	<thead class="tx-sans tx-11 text-uppercase tx-bold tx-spacing-1">
     		<tr>
-    			<th scope="col">#</th>
-    			<th class="bg-light" scope="col">Nama Produk</th>
-          <th scope="col">Ukuran</th>
-          <th class="bg-light" scope="col">Desain</th>
-          <th scope="col">Warna</th>
+    			<th scope="col">produk_id</th>
+    			<th class="bg-light" scope="col">Produk_nama</th>
+          <th scope="col">produk_uk</th>
+          <th class="bg-light" scope="col">produk_ds</th>
+          <th scope="col">produk_wr</th>
     			<th class="bg-light" scope="col">Actions</th>
     		</tr>
     	</thead>

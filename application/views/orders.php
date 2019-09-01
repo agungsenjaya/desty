@@ -17,11 +17,17 @@
     <table class="table dataTable no-footer" id="konsumen">
       <thead class="tx-sans tx-11 text-uppercase tx-bold tx-spacing-1">
         <tr>
-          <th scope="col">ID ORDER</th>
-          <th class="bg-light" scope="col">Id Konsumen</th>
-          <th scope="col">Nama Produk</th>
-          <th class="bg-light" scope="col">Orders Date</th>
-          <th scope="col">Hasil</th>
+          <th scope="col">order_id</th>
+          <th class="bg-light" scope="col">konsumen_id</th>
+          <th scope="col">produk_id</th>
+          <th class="bg-light" scope="col">order_reg</th>
+          <th scope="col">Order_wr</th>
+          <th scope="col">or_wr</th>
+          <th scope="col">Order_uk</th>
+          <th scope="col">or_uk</th>
+          <th scope="col">Order_ds</th>
+          <th scope="col">or_ds</th>
+          <th scope="col">order_hasil</th>
           <th class="bg-light" scope="col">Details</th>
         </tr>
       </thead>
@@ -35,14 +41,21 @@
            <tr class="item<?php echo $kuy->order_id?>">
             <th><?php echo $kuy->order_id?></th>
             <td class="bg-light"><?php echo $kuy->konsumen_id; ?></td>
-            <td class="text-capitalize"><?php 
+            <!-- <td class="text-capitalize"><?php 
             $jk = "SELECT produk_nama FROM tbl_produks WHERE produk_id=".$kuy->produk_id;
             $jh = $this->db->query($jk)->result();
             foreach ($jh as $hj) {
               echo $hj->produk_nama;
             }
-            ?></td>
+            ?></td> -->
+            <td class="bg-light"><?php echo $kuy->produk_id; ?></td>
             <td class="bg-light"><?php echo $kuy->order_reg; ?></td>
+            <td class="bg-light"><?php echo $kuy->order_wr; ?></td>
+            <td class="bg-light"><?php echo $kuy->or_wr; ?></td>
+            <td class="bg-light"><?php echo $kuy->order_uk; ?></td>
+            <td class="bg-light"><?php echo $kuy->or_uk; ?></td>
+            <td class="bg-light"><?php echo $kuy->order_ds; ?></td>
+            <td class="bg-light"><?php echo $kuy->or_ds; ?></td>
             <td><?php echo $kuy->order_hasil; ?></td>
             <td class="bg-light"><a href="<?php echo base_url();?>admin/orders_edit/<?php echo $kuy->order_id ?>" title="">Actions</a></td>
            </tr>

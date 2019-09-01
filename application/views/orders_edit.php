@@ -20,24 +20,24 @@
           <table class="table table-striped tx-11">
             <tbody>
               <tr>
-                <td class="tx-bold">ORDER ID</td>
+                <td class="tx-bold">ORDER_ID</td>
                 <td>:</td>
                 <td><?php echo $key->order_id ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">ORDER DATE</td>
+                <td class="tx-bold">ORDER_REG</td>
                 <td>:</td>
                 <td><?php echo $key->order_reg ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">KONSUMEN ID</td>
+                <td class="tx-bold">KONSUMEN_ID</td>
                 <td>:</td>
                 <td><?php echo $key->konsumen_id ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">NAMA PRODUK</td>
+                <td class="tx-bold">PRODUK_ID</td>
                 <td>:</td>
-                <td class="text-capitalize">
+               <!--  <td class="text-capitalize">
                   <?php 
                   $jk = "SELECT produk_nama FROM tbl_produks WHERE produk_id=".$key->produk_id;
                   $jh = $this->db->query($jk)->result();
@@ -45,35 +45,36 @@
                     echo $hj->produk_nama;
                   }
                   ?>
-                </td>
+                </td> -->
+                <td><?php echo $key->produk_id ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">ORDER WARNA</td>
+                <td class="tx-bold">ORDER_WR</td>
                 <td>:</td>
                 <td><?php echo $key->order_wr ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">K.WARNA</td>
+                <td class="tx-bold">OR_WR</td>
                 <td>:</td>
                 <td><?php echo $key->or_wr ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">ORDER UKURAN</td>
+                <td class="tx-bold">ORDER_UK</td>
                 <td>:</td>
                 <td><?php echo $key->order_uk ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">K.UKURAN</td>
+                <td class="tx-bold">OR_UK</td>
                 <td>:</td>
                 <td><?php echo $key->or_uk ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">ORDER DESAIN</td>
+                <td class="tx-bold">ORDER_DS</td>
                 <td>:</td>
                 <td><?php echo $key->order_ds ?></td>
               </tr>
               <tr>
-                <td class="tx-bold">K.DESAIN</td>
+                <td class="tx-bold">OR_DS</td>
                 <td>:</td>
                 <td><?php echo $key->or_ds ?></td>
               </tr>
